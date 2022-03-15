@@ -3,3 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.background-upper {
+    height: 15vh;
+    width: 100%;
+
+    background-color: #009688;
+}
+
+.background-lower {
+    height: 85vh;
+    width: 100%;
+
+    background-color: #d9dbd3;
+}
