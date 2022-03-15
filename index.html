@@ -10,256 +10,142 @@
     <title>Boots App</title>
 </head>
 <body>
+
+    <div id="app">
+        <div class="background-container">
+            <div class="background-upper">
     
-    <div class="background-container">
-        <div class="background-upper">
-
+            </div>
+            <div class="background-lower">
+    
+            </div>
         </div>
-        <div class="background-lower">
+    
+        <main>
+            <div class="main-container">
+                <section id="main-left">
+                    <nav class="nav-left">
+                        <div class="user-data">
+                            <div class="container-user-img">
+                                <img :src="userData.picture" alt="la tua immagine">
+                            </div>
+                            <div class="user-name">
+                                {{userData.name}}
+                            </div>
+                        </div>
+                        <div class="container-btns">
+                            <button><i class="fa-solid fa-circle-notch"></i></button>
+                            <button><i class="fa-solid fa-message"></i></button>
+                            <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        </div>
+                    </nav>
+    
+                    <div class="alert-notif">
+                        <div class="container-bell-icon">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+    
+                        <div class="alert-notif-text">
+                            <p>Ricevi notifiche du nuovi messaggi</p>
+                            <a href="">Attiva notifiche dekstop</a>
+                        </div>
+                    </div>
+    
+                    <div class="search-bar">
+                        <button class="btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+    
+                    <div class="container-chats-list">
+                        <ul class="chats-list">
+                            <li v-for="contact in contacts" class="chat">
+                                <div class="chat-data">
+                                    <div class="container-contact-img">
+                                        <img :src="contact.picture" :alt="contact.name">
+                                    </div>
+                                    <div class="chat-data-text">
+                                        <div class="contact-name">
+                                            {{contact.name}}
+                                        </div>
+                                        <div class="chat-last-msg">
+                                            Ultimo messaggio inviato
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="last-msg-time">
+                                    12:00
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+    
+                <section id="main-right">
+                    <nav class="nav-right">
+                        <div class="contact-data">
+                            <div class="container-active-contact-img">
+                                <img src="img/avatar_2.jpg" alt="contact picture">
+                            </div>
+                            <div class="container-contact-text">
+                                <div class="contact-name">
+                                    Michele
+                                </div>
+                                <div class="last-access">
+                                    ultimo accesso oggi alle 12:00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-btns">
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <button><i class="fa-solid fa-paperclip"></i></button>
+                            <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        </div>
+                    </nav>
+    
+                    <div class="container-chat-log">
+                        <ul class="chat-log">
+                            <li class="container-msg sent">
+                                <div class="msg">
+                                    Hai portato a spasso il cane?
+                                </div>
+                                <div class="sent-time">
+                                    15:30
+                                </div>
+                            </li>
+                            <li class="container-msg sent">
+                                <div class="msg">
+                                    Ricordati di stendere i panni
+                                </div>
+                                <div class="sent-time">
+                                    15:50
+                                </div>
+                            </li>
+                            <li class="container-msg recived">
+                                <div class="msg">
+                                    Tutto fatto!
+                                </div>
+                                <div class="sent-time">
+                                    16:15
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="container-msg-input">
+                        <button class="btn-emoji-selection"><i class="fa-solid fa-face-smile"></i></button>
+                        <input class="msg-input" type="text" placeholder="Scrivi un messaggio">
+                        <button class="btn-vocal-msg"><i class="fa-solid fa-microphone"></i></button>
+                    </div>
+                </section>
+            </div>
+        </main>
 
-        </div>
     </div>
+    
 
-    <main>
-        <div class="main-container">
-            <section id="main-left">
-                <nav class="nav-left">
-                    <div class="user-data">
-                        <div class="container-user-img">
-                            <img src="img/avatar_1.jpg" alt="user picture">
-                        </div>
-                        <div class="user-name">
-                            Federico
-                        </div>
-                    </div>
-                    <div class="container-btns">
-                        <button><i class="fa-solid fa-circle-notch"></i></button>
-                        <button><i class="fa-solid fa-message"></i></button>
-                        <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                    </div>
-                </nav>
-
-                <div class="alert-notif">
-                    <div class="container-bell-icon">
-                        <i class="fa-solid fa-bell-slash"></i>
-                    </div>
-
-                    <div class="alert-notif-text">
-                        <p>Ricevi notifiche du nuovi messaggi</p>
-                        <a href="">Attiva notifiche dekstop</a>
-                    </div>
-                </div>
-
-                <div class="search-bar">
-                    <button class="btn-search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
-                </div>
-
-                <div class="container-chats-list">
-                    <ul class="chats-list">
-                        <li class="chat">
-                            <div class="chat-data">
-                                <div class="container-contact-img">
-                                    <img src="img/avatar_2.jpg" alt="foto contatto">
-                                </div>
-                                <div class="chat-data-text">
-                                    <div class="contact-name">
-                                        Michele
-                                    </div>
-                                    <div class="chat-last-msg">
-                                        Ultimo messaggio inviato
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="last-msg-time">
-                                12:00
-                            </div>
-                        </li><li class="chat">
-                            <div class="chat-data">
-                                <div class="container-contact-img">
-                                    <img src="img/avatar_2.jpg" alt="foto contatto">
-                                </div>
-                                <div class="chat-data-text">
-                                    <div class="contact-name">
-                                        Michele
-                                    </div>
-                                    <div class="chat-last-msg">
-                                        Ultimo messaggio inviato
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="last-msg-time">
-                                12:00
-                            </div>
-                        </li><li class="chat">
-                            <div class="chat-data">
-                                <div class="container-contact-img">
-                                    <img src="img/avatar_2.jpg" alt="foto contatto">
-                                </div>
-                                <div class="chat-data-text">
-                                    <div class="contact-name">
-                                        Michele
-                                    </div>
-                                    <div class="chat-last-msg">
-                                        Ultimo messaggio inviato
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="last-msg-time">
-                                12:00
-                            </div>
-                        </li><li class="chat">
-                            <div class="chat-data">
-                                <div class="container-contact-img">
-                                    <img src="img/avatar_2.jpg" alt="foto contatto">
-                                </div>
-                                <div class="chat-data-text">
-                                    <div class="contact-name">
-                                        Michele
-                                    </div>
-                                    <div class="chat-last-msg">
-                                        Ultimo messaggio inviato
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="last-msg-time">
-                                12:00
-                            </div>
-                        </li><li class="chat">
-                            <div class="chat-data">
-                                <div class="container-contact-img">
-                                    <img src="img/avatar_2.jpg" alt="foto contatto">
-                                </div>
-                                <div class="chat-data-text">
-                                    <div class="contact-name">
-                                        Michele
-                                    </div>
-                                    <div class="chat-last-msg">
-                                        Ultimo messaggio inviato
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="last-msg-time">
-                                12:00
-                            </div>
-                        </li><li class="chat">
-                            <div class="chat-data">
-                                <div class="container-contact-img">
-                                    <img src="img/avatar_2.jpg" alt="foto contatto">
-                                </div>
-                                <div class="chat-data-text">
-                                    <div class="contact-name">
-                                        Michele
-                                    </div>
-                                    <div class="chat-last-msg">
-                                        Ultimo messaggio inviato
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="last-msg-time">
-                                12:00
-                            </div>
-                        </li><li class="chat">
-                            <div class="chat-data">
-                                <div class="container-contact-img">
-                                    <img src="img/avatar_2.jpg" alt="foto contatto">
-                                </div>
-                                <div class="chat-data-text">
-                                    <div class="contact-name">
-                                        Michele
-                                    </div>
-                                    <div class="chat-last-msg">
-                                        Ultimo messaggio inviato
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="last-msg-time">
-                                12:00
-                            </div>
-                        </li><li class="chat">
-                            <div class="chat-data">
-                                <div class="container-contact-img">
-                                    <img src="img/avatar_2.jpg" alt="foto contatto">
-                                </div>
-                                <div class="chat-data-text">
-                                    <div class="contact-name">
-                                        Michele
-                                    </div>
-                                    <div class="chat-last-msg">
-                                        Ultimo messaggio inviato
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="last-msg-time">
-                                12:00
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="main-right">
-                <nav class="nav-right">
-                    <div class="contact-data">
-                        <div class="container-active-contact-img">
-                            <img src="img/avatar_2.jpg" alt="contact picture">
-                        </div>
-                        <div class="container-contact-text">
-                            <div class="contact-name">
-                                Michele
-                            </div>
-                            <div class="last-access">
-                                ultimo accesso oggi alle 12:00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-btns">
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <button><i class="fa-solid fa-paperclip"></i></button>
-                        <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                    </div>
-                </nav>
-
-                <div class="container-chat-log">
-                    <ul class="chat-log">
-                        <li class="container-msg sent">
-                            <div class="msg">
-                                Hai portato a spasso il cane?
-                            </div>
-                            <div class="sent-time">
-                                15:30
-                            </div>
-                        </li>
-                        <li class="container-msg sent">
-                            <div class="msg">
-                                Ricordati di stendere i panni
-                            </div>
-                            <div class="sent-time">
-                                15:50
-                            </div>
-                        </li>
-                        <li class="container-msg recived">
-                            <div class="msg">
-                                Tutto fatto!
-                            </div>
-                            <div class="sent-time">
-                                16:15
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="container-msg-input">
-                    <button class="btn-emoji-selection"><i class="fa-solid fa-face-smile"></i></button>
-                    <input class="msg-input" type="text" placeholder="Scrivi un messaggio">
-                    <button class="btn-vocal-msg"><i class="fa-solid fa-microphone"></i></button>
-                </div>
-            </section>
-        </div>
-    </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
