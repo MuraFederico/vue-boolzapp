@@ -60,7 +60,7 @@
     
                     <div class="container-chats-list">
                         <ul class="chats-list">
-                            <li v-for="contact in contacts" class="chat">
+                            <li v-for="(contact, index) in contacts" @click="openChat(index)" class="chat">
                                 <div class="chat-data">
                                     <div class="container-contact-img">
                                         <img :src="contact.picture" :alt="contact.name">
@@ -70,12 +70,12 @@
                                             {{contact.name}}
                                         </div>
                                         <div class="chat-last-msg">
-                                            Ultimo messaggio inviato
+                                            {{contact.lastMsg}}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="last-msg-time">
-                                    12:00
+                                    {{contact.lastAccess}}
                                 </div>
                             </li>
                         </ul>
@@ -86,14 +86,14 @@
                     <nav class="nav-right">
                         <div class="contact-data">
                             <div class="container-active-contact-img">
-                                <img src="img/avatar_2.jpg" alt="contact picture">
+                                <img :src="contacts[activeChat].picture" :alt="'immagine di ' + contacts[activeChat].name">
                             </div>
                             <div class="container-contact-text">
                                 <div class="contact-name">
-                                    Michele
+                                    {{contacts[activeChat].name}}
                                 </div>
                                 <div class="last-access">
-                                    ultimo accesso oggi alle 12:00
+                                    {{contacts[activeChat].lastAccess}}
                                 </div>
                             </div>
                         </div>
@@ -106,28 +106,12 @@
     
                     <div class="container-chat-log">
                         <ul class="chat-log">
-                            <li class="container-msg sent">
+                            <li v-for="log in contacts[activeChat].chatLog" class="container-msg" :class="log.status == 'sent' ? 'sent' : 'recived'">
                                 <div class="msg">
-                                    Hai portato a spasso il cane?
+                                    {{log.message}}
                                 </div>
                                 <div class="sent-time">
-                                    15:30
-                                </div>
-                            </li>
-                            <li class="container-msg sent">
-                                <div class="msg">
-                                    Ricordati di stendere i panni
-                                </div>
-                                <div class="sent-time">
-                                    15:50
-                                </div>
-                            </li>
-                            <li class="container-msg recived">
-                                <div class="msg">
-                                    Tutto fatto!
-                                </div>
-                                <div class="sent-time">
-                                    16:15
+                                    {{getSentTime(log)}}
                                 </div>
                             </li>
                         </ul>
@@ -146,6 +130,7 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
