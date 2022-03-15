@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+button {
+    background-color: transparent;
+
+    border: none;
+}
+
 .background-upper {
     height: 15vh;
     width: 100%;
@@ -17,3 +23,183 @@
 
     background-color: #d9dbd3;
 }
+
+/* ------- SEZIONE PRINCIPALE ------- */
+
+.main-container {
+    width: 80%;
+    min-width: 700px;
+    height: 95%;
+
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+/* ------- SEZIONE PRINCIPALE SINISTRA ------- */
+
+#main-left {
+    width: 40%;
+    height: 100%;
+
+    background-color: white;
+}
+
+/* ------- NAV SEZIONE SINISTRA ------- */
+
+nav {
+    padding: .5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #eaeaea;
+}
+
+.user-data {
+    display: flex;
+    align-items: center;
+
+    flex-grow: 1;
+}
+
+.container-user-img,
+.container-bell-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+.container-user-img img,
+.container-contact-img img {
+    width: 100%;
+}
+
+.container-btns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-btns button {
+    padding: 0 .5rem;
+
+    font-size: 1.5rem;
+    color: #b1b1b1;
+}
+
+/* ------- CONTENUTO SEZIONE SINISTRA ------- */
+
+/* ------- AVVISO ATTIVAZIONE NOTIFICHE ------- */
+
+.alert-notif {
+    padding: 0.7rem;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #8edafc;
+}
+
+.container-bell-icon{
+    margin-right: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+}
+
+.container-bell-icon i {
+    font-size: 1.3rem;
+    color: #8edafc;
+}
+
+.alert-notif-text a {
+    color: #555555;
+}
+
+/* ------- BARRA DI RICERCA ------- */
+
+.search-bar {
+    padding: .5rem;
+
+    display: flex;
+
+    background-color: #fafafa;
+}
+
+.search-bar .btn-search {
+    padding: .5rem 2rem;
+
+    background-color: white;
+    color: #bdbcbe;
+}
+
+.search-bar input {
+    padding: .5rem;
+
+    flex-grow: 1;
+}
+
+/* ------- LISTA DELLE CHAT ------- */
+
+.container-chats-list {
+    height: calc(100% - 190px);
+    overflow-y: scroll;
+}
+
+.chats-list {
+    list-style: none;
+}
+
+.chat {
+    padding: .5rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid #e9ebeb;
+    background-color: white;
+}
+
+.chat-data {
+    display: flex;
+    flex-grow: 1;
+}
+
+.container-contact-img {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 1rem;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+.chat-data-text {
+    line-height: 1.2rem;
+}
+
+.chat-last-msg,
+.last-msg-time {
+    font-size: .7rem;
+    color: #b1b1b1;
+}
+
+
+
+/* ------- SEZIONE PRINCIPALE DESTRA ------- */
+
+
+
