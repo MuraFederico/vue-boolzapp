@@ -302,15 +302,21 @@ nav {
 }
 
 .drop-down {
+    width: 150px;
+    padding: .3rem;
+
     position: absolute;
-    bottom: -15px;
+    top: 15px;
     right: 0;
 
+    background-color: white;
+    border: 1px solid black;
     font-size: 1rem;
 }
 
 .drop-down:hover {
     cursor: pointer;
+    color: #b1b1b1;
 }
 
 /* ------- SEZIONE SCRITTURA MESSAGGI ------- */
