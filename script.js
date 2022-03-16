@@ -224,11 +224,14 @@ var app = new Vue({
                 contact.lastMsg = contact.chatLog[contact.chatLog.length - 1].message;
             });
         },
+        reply() {
+            this.contacts[this.activeChat].chatLog.push({...this.replyMsg});
+        },
         sendMsg() {
             this.newMsg.date = dayjs();
             this.contacts[this.activeChat].chatLog.push({...this.newMsg});
             this.newMsg.message = '';
-            setTimeout(this.contacts[this.activeChat].chatLog.push({...this.replyMsg}), 20000);
+            setTimeout(this.reply, 2000);
         }
     },
     created() {
