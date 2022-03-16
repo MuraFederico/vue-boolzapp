@@ -109,7 +109,7 @@
                             default
                         </div> -->
                         <ul class="chat-log">
-                            <li v-for="log in contacts[activeChat].chatLog" class="container-msg" :class="log.status == 'sent' ? 'sent' : 'recived'">
+                            <li v-for="log in contacts[activeChat].chatLog" :key="log.date" class="container-msg" :class="log.status == 'sent' ? 'sent' : 'recived'">
                                 <div class="msg">
                                     {{log.message}}
                                 </div>
