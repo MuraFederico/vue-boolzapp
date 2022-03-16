@@ -3,6 +3,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+        filter: '',
         activeChat: 0,
         msgTime: '',
         newMsg: {
@@ -25,6 +26,7 @@ var app = new Vue({
               picture: 'img/avatar_1.jpg',
               lastAccess: '',
               lastMsg: '',
+              hidden: false,
               chatLog: [
                       {
                       date: '2022-03-15T15:30:53',
@@ -48,6 +50,7 @@ var app = new Vue({
               picture: 'img/avatar_2.jpg',
               lastAccess: '',
               lastMsg: '',
+              hidden: false,
               chatLog: [
                 {
                 date: '2022-03-15T10:30:53',
@@ -66,6 +69,7 @@ var app = new Vue({
               picture: 'img/avatar_3.jpg',
               lastAccess: '',
               lastMsg: '',
+              hidden: false,
               chatLog: [
                 {
                 date: '2022-03-15T15:17:23',
@@ -89,6 +93,7 @@ var app = new Vue({
               picture: 'img/avatar_4.jpg',
               lastAccess: '',
               lastMsg: '',
+              hidden: false,
               chatLog: [
                 {
                 date: '2022-03-15T19:30:53',
@@ -107,6 +112,7 @@ var app = new Vue({
               picture: 'img/avatar_5.jpg',
               lastAccess: '',
               lastMsg: '',
+              hidden: false,
               chatLog: [
                 {
                 date: '2022-03-15T11:30:53',
@@ -135,6 +141,7 @@ var app = new Vue({
               picture: 'img/avatar_6.jpg',
               lastAccess: '',
               lastMsg: '',
+              hidden: false,
               chatLog: [
                 {
                 date: '2022-03-15T20:35:23',
@@ -163,6 +170,7 @@ var app = new Vue({
               picture: 'img/avatar_io.jpg',
               lastAccess: '',
               lastMsg: '',
+              hidden: false,
               chatLog: [
                 {
                 date: '2022-03-15T13:07:23',
@@ -186,6 +194,7 @@ var app = new Vue({
               picture: 'img/avatar_8.jpg',
               lastAccess: '',
               lastMsg: '',
+              hidden: false,
               chatLog: [
                 {
                 date: '2022-03-15T08:30:53',
@@ -232,6 +241,15 @@ var app = new Vue({
             this.contacts[this.activeChat].chatLog.push({...this.newMsg});
             this.newMsg.message = '';
             setTimeout(this.reply, 2000);
+        },
+        filterContacts() {
+            this.contacts.forEach(contact => {
+               if (!contact.name.toLowerCase().includes(this.filter.toLowerCase())){
+                    contact.hidden = true;
+               }else {
+                contact.hidden = false;
+               }
+            })
         }
     },
     created() {

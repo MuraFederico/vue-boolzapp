@@ -55,12 +55,12 @@
                         <button class="btn-search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="filter" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
     
                     <div class="container-chats-list">
                         <ul class="chats-list">
-                            <li v-for="(contact, index) in contacts" @click="openChat(index)" class="chat">
+                            <li v-for="(contact, index) in contacts" @click="openChat(index)" class="chat" :class="{'hide': contact.hidden}">
                                 <div class="chat-data">
                                     <div class="container-contact-img">
                                         <img :src="contact.picture" :alt="contact.name">

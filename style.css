@@ -316,3 +316,7 @@ nav {
     border-radius: .3rem;
 
 }
+
+.hide {
+    display: none;
+}
