@@ -109,12 +109,20 @@
                             default
                         </div> -->
                         <ul class="chat-log">
-                            <li v-for="log in contacts[activeChat].chatLog" :key="log.date" class="container-msg" :class="log.status == 'sent' ? 'sent' : 'recived'">
+                            <li v-for="(log, index) in contacts[activeChat].chatLog" :key="log.date" class="container-msg" :class="log.status == 'sent' ? 'sent' : 'recived'">
                                 <div class="msg">
                                     {{log.message}}
                                 </div>
                                 <div class="sent-time">
                                     {{getSentTime(log)}}
+                                </div>
+                                <div @click.prevent="toggleDropDown(log)" class="btn-drop-down">
+                                    <a href="">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <div @click="deleteMsg(index)" class="drop-down" :class="{'hide': log.dropHidden}">
+                                        Cancella
+                                    </div>
                                 </div>
                             </li>
                         </ul>

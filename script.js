@@ -9,12 +9,14 @@ var app = new Vue({
         newMsg: {
             date: '',
             message: '',
-            status: 'sent'
+            status: 'sent',
+            dropHidden: true,
         },
         replyMsg: {
             date: dayjs(),
             status: 'recived',
             message: 'Ok',
+            dropHidden: true,
         },
         userData: {
           name: 'Federico',
@@ -31,17 +33,20 @@ var app = new Vue({
                       {
                       date: '2022-03-15T15:30:53',
                       message: 'Hai portato a spasso il cane?',
-                      status: 'sent'
+                      status: 'sent',
+                      dropHidden: true,
                       },
                       {
                           date: '2022-03-15T15:50:53',
                           message: 'Ricordati di stendere i panni',
-                          status: 'sent'
+                          status: 'sent',
+                          dropHidden: true,
                       },
                       {
                           date: '2022-03-15T16:03:53',
                           message: 'Tutto fatto!',
-                          status: 'received'
+                          status: 'received',
+                          dropHidden: true,
                       }
                   ]
             },
@@ -55,12 +60,14 @@ var app = new Vue({
                 {
                 date: '2022-03-15T10:30:53',
                 message: 'Domenica vieni in montagna?',
-                status: 'sent'
+                status: 'sent',
+                dropHidden: true,
                 },
                 {
                     date: '2022-03-15T13:46:53',
                     message: 'No, sono malato :c',
-                    status: 'received'
+                    status: 'received',
+                    dropHidden: true,
                 }
             ]
             },
@@ -74,17 +81,20 @@ var app = new Vue({
                 {
                 date: '2022-03-15T15:17:23',
                 message: 'Sto gia iniziando a finire le idee',
-                status: 'sent'
+                status: 'sent',
+                dropHidden: true,
                 },
                 {
                     date: '2022-03-15T17:30:53',
                     message: 'Guarda conoscnedoti...',
-                    status: 'recived'
+                    status: 'recived',
+                    dropHidden: true,
                 },
                 {
                     date: '2022-03-15T17:31:00',
                     message: 'E gia tanto che ne hai cambiato uno',
-                    status: 'recived'
+                    status: 'recived',
+                    dropHidden: true,
                 }
             ]
             },
@@ -98,12 +108,14 @@ var app = new Vue({
                 {
                 date: '2022-03-15T19:30:53',
                 message: 'Aiuto.',
-                status: 'sent'
+                status: 'sent',
+                dropHidden: true,
                 },
                 {
                     date: '2022-03-15T19:35:11',
                     message: 'Non so come aiutarti',
-                    status: 'recived'
+                    status: 'recived',
+                    dropHidden: true,
                 },
             ]
             },
@@ -117,22 +129,26 @@ var app = new Vue({
                 {
                 date: '2022-03-15T11:30:53',
                 message: 'Ma quanti siete',
-                status: 'sent'
+                status: 'sent',
+                dropHidden: true,
                 },
                 {
                     date: '2022-03-15T11:45:53',
                     message: 'Se intendi quanti Alessandi allora siamo 2',
-                    status: 'recived'
+                    status: 'recived',
+                    dropHidden: true,
                 },
                 {
                     date: '2022-03-15T11:47:53',
                     message: 'Se intendi i contatti dovresti saperlo tu...',
-                    status: 'received'
+                    status: 'received',
+                    dropHidden: true,
                 },
                 {
                     date: '2022-03-15T11:48:53',
                     message: 'hai creato tu la struttura dati',
-                    status: 'recived'
+                    status: 'recived',
+                    dropHidden: true,
                 },
             ]
             },
@@ -146,22 +162,26 @@ var app = new Vue({
                 {
                 date: '2022-03-15T20:35:23',
                 message: 'Ma sbaglio o non stai piu cambiando gli orari di invio?',
-                status: 'recived'
+                status: 'recived',
+                dropHidden: true,
                 },
                 {
                     date: '2022-03-15T20:40:55',
                     message: 'Ti prego stai zitta',
-                    status: 'sent'
+                    status: 'sent',
+                    dropHidden: true,
                 },
                 {
                     date: '2022-03-15T20:41:13',
                     message: "Sai gia che dovrai cambiarle comunque perche' ti serviranno come key del v-for, vero?",
-                    status: 'recived'
+                    status: 'recived',
+                    dropHidden: true,
                 },
                 {
                     date: '2022-03-15T20:42:05',
                     message: 'AAAAAAAAAAAAHHHH',
-                    status: 'sent'
+                    status: 'sent',
+                    dropHidden: true,
                 },
             ]
             },
@@ -175,17 +195,20 @@ var app = new Vue({
                 {
                 date: '2022-03-15T13:07:23',
                 message: 'Sofia, Claudia mi bullizza, dille qualcosa',
-                status: 'sent'
+                status: 'sent',
+                dropHidden: true,
                 },
                 {
                     date: '2022-03-15T23:30:53',
                     message: 'Veditela da solo io sto giocando a Elden Ring',
-                    status: 'received'
+                    status: 'received',
+                    dropHidden: true,
                 },
                 {
                     date: '2022-03-15T23:57:53',
                     message: 'Tanto Goldrick non lo batterai mai',
-                    status: 'sent'
+                    status: 'sent',
+                    dropHidden: true,
                     }
             ]
             },
@@ -199,17 +222,20 @@ var app = new Vue({
                 {
                 date: '2022-03-15T08:30:53',
                 message: "Ti voglio bene, sai perche'?",
-                status: 'sent'
+                status: 'sent',
+                dropHidden: true,
                 },
                 {
                     date: '2022-03-15T09:00:53',
                     message: 'No',
-                    status: 'recived'
+                    status: 'recived',
+                    dropHidden: true,
                 },
                 {
                     date: '2022-03-15T10:11:38',
                     message: "Perche' sei l'ultimo",
-                    status: 'sent'
+                    status: 'sent',
+                    dropHidden: true,
                 }
             ]
             },
@@ -250,7 +276,13 @@ var app = new Vue({
                 contact.hidden = false;
                }
             })
-        }
+        },
+        toggleDropDown(log) {
+            log.dropHidden = !log.dropHidden
+        },
+        deleteMsg(logIndex) {
+            this.contacts[this.activeChat].chatLog.splice(logIndex, 1);
+        },
     },
     created() {
         this.getLastAccess();

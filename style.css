@@ -284,6 +284,35 @@ nav {
     color: #b1b1b1;
 }
 
+.btn-drop-down {
+    display: none;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+
+    font-size: .8rem;
+}
+
+.btn-drop-down a {
+    color: #b1b1b1;
+}
+
+.container-msg:hover .btn-drop-down {
+    display: block;
+}
+
+.drop-down {
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+
+    font-size: 1rem;
+}
+
+.drop-down:hover {
+    cursor: pointer;
+}
+
 /* ------- SEZIONE SCRITTURA MESSAGGI ------- */
 
 .container-msg-input {
