@@ -5,6 +5,16 @@ var app = new Vue({
     data: {
         activeChat: 0,
         msgTime: '',
+        newMsg: {
+            date: '',
+            message: '',
+            status: 'sent'
+        },
+        replyMsg: {
+            date: dayjs(),
+            status: 'recived',
+            message: 'Ok',
+        },
         userData: {
           name: 'Federico',
           picture: 'img/avatar_7.jpg',
@@ -17,17 +27,17 @@ var app = new Vue({
               lastMsg: '',
               chatLog: [
                       {
-                      date: '10/01/2020 15:30:55',
+                      date: '2022-03-15T15:30:53',
                       message: 'Hai portato a spasso il cane?',
                       status: 'sent'
                       },
                       {
-                          date: '10/01/2020 15:50:00',
+                          date: '2022-03-15T15:50:53',
                           message: 'Ricordati di stendere i panni',
                           status: 'sent'
                       },
                       {
-                          date: '10/01/2020 16:15:22',
+                          date: '2022-03-15T16:03:53',
                           message: 'Tutto fatto!',
                           status: 'received'
                       }
@@ -40,18 +50,13 @@ var app = new Vue({
               lastMsg: '',
               chatLog: [
                 {
-                date: '10/01/2020 15:30:55',
-                message: 'Hai portato a spasso il cane?',
+                date: '2022-03-15T10:30:53',
+                message: 'Domenica vieni in montagna?',
                 status: 'sent'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
-                    message: 'Ricordati di stendere i panni',
-                    status: 'sent'
-                },
-                {
-                    date: '10/01/2020 16:15:22',
-                    message: 'Tutto fatto!',
+                    date: '2022-03-15T13:46:53',
+                    message: 'No, sono malato :c',
                     status: 'received'
                 }
             ]
@@ -63,43 +68,38 @@ var app = new Vue({
               lastMsg: '',
               chatLog: [
                 {
-                date: '10/01/2020 15:30:55',
-                message: 'Hai portato a spasso il cane?',
+                date: '2022-03-15T15:30:53',
+                message: 'Sto gia iniziando a finire le idee',
                 status: 'sent'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
-                    message: 'Ricordati di stendere i panni',
-                    status: 'sent'
+                    date: '2022-03-15T15:30:53',
+                    message: 'Guarda conoscnedoti...',
+                    status: 'recived'
                 },
                 {
-                    date: '10/01/2020 16:15:22',
-                    message: 'Tutto fatto!',
-                    status: 'received'
+                    date: '2022-03-15T15:30:53',
+                    message: 'E gia tanto che ne hai cambiato uno',
+                    status: 'recived'
                 }
             ]
             },
             {
-              name: 'Alessandri B.',
+              name: 'Alessandro B.',
               picture: 'img/avatar_4.jpg',
               lastAccess: '',
               lastMsg: '',
               chatLog: [
                 {
-                date: '10/01/2020 15:30:55',
-                message: 'Hai portato a spasso il cane?',
+                date: '2022-03-15T15:30:53',
+                message: 'Aiuto.',
                 status: 'sent'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
-                    message: 'Ricordati di stendere i panni',
-                    status: 'sent'
+                    date: '2022-03-15T15:30:53',
+                    message: 'Non so come aiutarti',
+                    status: 'recived'
                 },
-                {
-                    date: '10/01/2020 16:15:22',
-                    message: 'Tutto fatto!',
-                    status: 'received'
-                }
             ]
             },
             {
@@ -109,20 +109,25 @@ var app = new Vue({
               lastMsg: '',
               chatLog: [
                 {
-                date: '10/01/2020 15:30:55',
-                message: 'Hai portato a spasso il cane?',
+                date: '2022-03-15T15:30:53',
+                message: 'Ma quanti siete',
                 status: 'sent'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
-                    message: 'Ricordati di stendere i panni',
-                    status: 'sent'
+                    date: '2022-03-15T15:30:53',
+                    message: 'Se intendi quanti Alessandi allora siamo 2',
+                    status: 'recived'
                 },
                 {
-                    date: '10/01/2020 16:15:22',
-                    message: 'Tutto fatto!',
+                    date: '2022-03-15T15:30:53',
+                    message: 'Se intendi i contatti dovresti saperlo tu...',
                     status: 'received'
-                }
+                },
+                {
+                    date: '2022-03-15T15:30:53',
+                    message: 'hai creato tu la struttura dati',
+                    status: 'recived'
+                },
             ]
             },
             {
@@ -132,20 +137,25 @@ var app = new Vue({
               lastMsg: '',
               chatLog: [
                 {
-                date: '10/01/2020 15:30:55',
-                message: 'Hai portato a spasso il cane?',
-                status: 'sent'
+                date: '2022-03-15T15:30:53',
+                message: 'Ma sbaglio o non stai piu cambiando gli orari di invio?',
+                status: 'recived'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
-                    message: 'Ricordati di stendere i panni',
+                    date: '2022-03-15T15:30:53',
+                    message: 'Ti prego stai zitta',
                     status: 'sent'
                 },
                 {
-                    date: '10/01/2020 16:15:22',
-                    message: 'Tutto fatto!',
-                    status: 'received'
-                }
+                    date: '2022-03-15T15:30:53',
+                    message: "Sai gia che dovrai cambiarle comunque perche' ti serviranno come key del v-for, vero?",
+                    status: 'recived'
+                },
+                {
+                    date: '2022-03-15T15:30:53',
+                    message: 'AAAAAAAAAAAAHHHH',
+                    status: 'sent'
+                },
             ]
             },
             {
@@ -155,20 +165,20 @@ var app = new Vue({
               lastMsg: '',
               chatLog: [
                 {
-                date: '10/01/2020 15:30:55',
-                message: 'Hai portato a spasso il cane?',
+                date: '2022-03-15T15:30:53',
+                message: 'Sofia, Claudia mi bullizza, dille qualcosa',
                 status: 'sent'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
-                    message: 'Ricordati di stendere i panni',
-                    status: 'sent'
+                    date: '2022-03-15T15:30:53',
+                    message: 'Veditela da solo io sto giocando a Elden Ring',
+                    status: 'received'
                 },
                 {
-                    date: '10/01/2020 16:15:22',
-                    message: 'Tutto fatto!',
-                    status: 'received'
-                }
+                    date: '2022-03-15T15:30:53',
+                    message: 'Tanto Goldrick non lo batterai mai',
+                    status: 'sent'
+                    }
             ]
             },
             {
@@ -178,19 +188,19 @@ var app = new Vue({
               lastMsg: '',
               chatLog: [
                 {
-                date: '10/01/2020 15:30:55',
-                message: 'Hai portato a spasso il cane?',
+                date: '2022-03-15T15:30:53',
+                message: "Ti voglio bene, sai perche'?",
                 status: 'sent'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
-                    message: 'Ricordati di stendere i panni',
-                    status: 'sent'
+                    date: '2022-03-15T15:30:53',
+                    message: 'No',
+                    status: 'recived'
                 },
                 {
-                    date: '10/01/2020 16:15:22',
-                    message: 'Tutto fatto!',
-                    status: 'received'
+                    date: '2022-03-15T15:30:53',
+                    message: "Perche' sei l'ultimo",
+                    status: 'sent'
                 }
             ]
             },
@@ -201,7 +211,7 @@ var app = new Vue({
             this.activeChat = index;
         },
         getSentTime(log) {
-            return dayjs(log.date, "DD/MM/YYYY HH:mm:ss").format("HH:mm")
+            return dayjs(log.date).format("HH:mm")
         },
         getLastAccess() {
             this.contacts.forEach(contact => {
@@ -213,9 +223,19 @@ var app = new Vue({
             this.contacts.forEach(contact => {
                 contact.lastMsg = contact.chatLog[contact.chatLog.length - 1].message;
             });
+        },
+        sendMsg() {
+            this.newMsg.date = dayjs();
+            this.contacts[this.activeChat].chatLog.push({...this.newMsg});
+            this.newMsg.message = '';
+            setTimeout(this.contacts[this.activeChat].chatLog.push({...this.replyMsg}), 20000);
         }
     },
     created() {
+        this.getLastAccess();
+        this.getLastMsg();
+    },
+    updated() {
         this.getLastAccess();
         this.getLastMsg();
     }
