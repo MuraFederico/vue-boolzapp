@@ -273,7 +273,7 @@ var app = new Vue({
                if (!contact.name.toLowerCase().includes(this.filter.toLowerCase())){
                     contact.hidden = true;
                }else {
-                contact.hidden = false;
+                    contact.hidden = false;
                }
             })
         },
